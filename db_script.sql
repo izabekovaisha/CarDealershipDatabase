@@ -21,7 +21,7 @@ CREATE TABLE dealerships (
     dealership_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     address VARCHAR(50) NOT NULL,
-    phone VARCHAR(10) NOT NULL
+    phone VARCHAR(20) NOT NULL
 );
 
 -- Create the vehicles table
@@ -68,3 +68,11 @@ CREATE TABLE lease_contract (
     monthly_payment DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
+
+-- Insert sample data into dealerships table
+INSERT INTO dealerships (`name`, address, phone)
+VALUES ('D & B Used Cars', '111 Old Benrook Rd', '817-555-5555');
+
+-- Insert sample data into dealerships table
+INSERT INTO vehicles (VIN, `year`, make, model, vehicle_type, color, odometer, price, SOLD)
+VALUES ('10112', 1993, 'Ford', 'Explorer', 'SUV', 'red', 525123, 995.00, TRUE);
