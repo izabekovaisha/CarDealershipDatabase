@@ -71,8 +71,25 @@ CREATE TABLE lease_contract (
 
 -- Insert sample data into dealerships table
 INSERT INTO dealerships (`name`, address, phone)
-VALUES ('D & B Used Cars', '111 Old Benrook Rd', '817-555-5555');
+VALUES 
+('D & B Used Cars', '111 Old Benrook Rd', '817-555-5555'),
+('CarMax', '456 Lunar Lane', '713-555-5678'),
+('EcoRides', '789 Green St', '832-555-3030'),
+('Tesla Motors', '101 Diamond Dr', '650-555-6789'),
+('Hendrick Chevrolet', '100 Auto Mall Dr', '919-555-4321');
 
--- Insert sample data into dealerships table
+-- Insert sample data into vehicles table
 INSERT INTO vehicles (VIN, `year`, make, model, vehicle_type, color, odometer, price, SOLD)
-VALUES ('10112', 1993, 'Ford', 'Explorer', 'SUV', 'red', 525123, 995.00, TRUE);
+VALUES 
+('10112', 2016, 'Ford', 'Explorer', 'SUV', 'red', 55500, 90500.00, TRUE),
+('20486', 2018, 'Toyota', 'Camry', 'Sedan','blue', 25000, 20000.00, FALSE),
+('40448', 2015, 'Honda', 'Civic', 'Sedan', 'black', 35000, 18000.00, FALSE),
+('70782', 2023, 'Ford', 'F-150', 'Truck', 'gray', 60000, 12000.00, TRUE),
+('10123', '2020', 'Chevrolet', 'Equinox', 'SUV', 'white', 45000.00, FALSE)
+
+
+-- Insert sample data into inventory table
+INSERT INTO inventory (dealership_id, VIN)
+VALUES (1, '10112');
+
+-- Insert sample data into sales_contract table
