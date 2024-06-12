@@ -81,15 +81,29 @@ VALUES
 -- Insert sample data into vehicles table
 INSERT INTO vehicles (VIN, `year`, make, model, vehicle_type, color, odometer, price, SOLD)
 VALUES 
-('10112', 2016, 'Ford', 'Explorer', 'SUV', 'red', 55500, 90500.00, TRUE),
-('20486', 2018, 'Toyota', 'Camry', 'Sedan','blue', 25000, 20000.00, FALSE),
+('60934', 2021, 'BMW', 'X5', 'SUV', 'blue', 55500, 55000.00, TRUE),
+('20486', 2018, 'Toyota', 'Camry', 'Sedan','green', 25000, 20000.00, FALSE),
 ('40448', 2015, 'Honda', 'Civic', 'Sedan', 'black', 35000, 18000.00, FALSE),
 ('70782', 2023, 'Ford', 'F-150', 'Truck', 'gray', 60000, 12000.00, TRUE),
-('10123', '2020', 'Chevrolet', 'Equinox', 'SUV', 'white', 45000.00, FALSE)
-
+('10123', 2020, 'Chevrolet', 'Equinox', 'SUV', 'white', 45000.00, 25000.00, FALSE);
 
 -- Insert sample data into inventory table
 INSERT INTO inventory (dealership_id, VIN)
-VALUES (1, '10112');
+VALUES 
+(2, '20486'),
+(3, '40448'),
+(4, '70896'),
+(5, '10234'),
+(6, '10189');
 
 -- Insert sample data into sales_contract table
+INSERT INTO sales_contract (VIN, sales_tax, recording_fee, processing_fee, total_cost, finance, monthly_payment)
+VALUES 
+('10112', 2000.00, 100.00, 50.00, 92700.00, TRUE, 500.00), 
+('70782', 2400.00, 120.00, 60.00, 13680.00, TRUE, 550.00); 
+
+-- Insert sample data into lease_contract table
+INSERT INTO lease_contract (VIN, ending_value, lease_fee, total_cost, monthly_payment)
+VALUES 
+('20486', 15000.00, 100.00, 20100.00, 300.00), 
+('10123', 12000.00, 200.00, 25200.00, 400.00);
