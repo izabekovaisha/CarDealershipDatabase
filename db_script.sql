@@ -54,7 +54,7 @@ CREATE TABLE sales_contract (
     processing_fee DECIMAL(10, 2) NOT NULL,
     total_cost DECIMAL(10, 2) NOT NULL,
     finance BOOLEAN NOT NULL,
-    monthly_payment DECIMAL(10, 2) NOT NULL,
+    monthly_payment DECIMAL(10, 2),
     FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
  
@@ -90,20 +90,26 @@ VALUES
 -- Insert sample data into inventory table
 INSERT INTO inventory (dealership_id, VIN)
 VALUES 
+(1, '60934'),
 (2, '20486'),
 (3, '40448'),
-(4, '70896'),
-(5, '10234'),
-(6, '10189');
+(4, '70782'),
+(5, '10123');
  
 -- Insert sample data into sales_contract table
 INSERT INTO sales_contract (VIN, sales_tax, recording_fee, processing_fee, total_cost, finance, monthly_payment)
 VALUES 
-('10112', 2000.00, 100.00, 50.00, 92700.00, TRUE, 500.00), 
-('70782', 2400.00, 120.00, 60.00, 13680.00, TRUE, 550.00);
+('60934', 2000.00, 100.00, 50.00, 92700.00, TRUE, 500.00), 
+('20486', 2400.00, 120.00, 60.00, 13680.00, FALSE, NULL),
+('40448', 1500.00, 75.00, 35.00, 19910.00, TRUE, 400.00),
+('70782', 1800.00, 90.00, 45.00, 20790.00, FALSE, NULL),
+('10123', 2200.00, 1110.00, 55.00, 25900.00, TRUE, 600.00);
  
 -- Insert sample data into lease_contract table
 INSERT INTO lease_contract (VIN, ending_value, lease_fee, total_cost, monthly_payment)
 VALUES 
-('20486', 15000.00, 100.00, 20100.00, 300.00), 
-('10123', 12000.00, 200.00, 25200.00, 400.00);
+('60934', 15000.00, 100.00, 20100.00, 300.00), 
+('20486', 12000.00, 200.00, 25200.00, 400.00),
+('40448', 17000.00, 150.00, 22000.00, 350.00),
+('70782', 14000.00, 120.00, 18000.00, 300.00),
+('10123', 20000.00, 180.00, 27000.00, 400.00);
