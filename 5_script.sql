@@ -1,3 +1,4 @@
+-- Find all dealerships that have a certain car type:
 SELECT d.*
 FROM dealerships d
 INNER JOIN inventory i ON d.dealership_id = i.dealership_id

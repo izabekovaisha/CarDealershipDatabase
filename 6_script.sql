@@ -1,3 +1,4 @@
+-- Get all sales information for a specific dealer for a specific date range:
 SELECT s.*
 FROM sales_contract s
 INNER JOIN inventory i ON s.VIN = i.VIN
